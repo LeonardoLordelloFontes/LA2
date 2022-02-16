@@ -9,7 +9,6 @@ def hacker(log):
           if transaction[0][i] != '*':
               d[transaction[1]][i] = transaction[0][i]
     
-    
     for email in d:
         l.append(("".join(d[email]),email))
     
