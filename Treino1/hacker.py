@@ -5,9 +5,9 @@ def hacker(log):
         if transaction[1] not in d:
             d[transaction[1]] = ['*'] * 16
         
-        indexes = [i for i in range(16) if transaction[0][i] != '*']
-        for i in indexes:
-            d[transaction[1]][i] = transaction[0][i]
+        for i in range(16):
+          if transaction[0][i] != '*':
+              d[transaction[1]][i] = transaction[0][i]
     
     
     for email in d:
