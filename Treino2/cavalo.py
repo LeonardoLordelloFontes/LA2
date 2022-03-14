@@ -1,3 +1,4 @@
+
 def bfs(moves,o,d):
     dist = {}
     vis = {o}
@@ -7,11 +8,11 @@ def bfs(moves,o,d):
         if v == d:
             break
         
+        if v not in dist:
+                dist[v] = 0
+        
         for move in moves:
             pos = (v[0]+move[0], v[1]+move[1])
-            if v not in dist:
-                dist[v] = 0
-                
             if pos not in vis:
                 vis.add(pos)
                 dist[pos] = dist[v] + 1
