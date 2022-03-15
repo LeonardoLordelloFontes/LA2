@@ -20,6 +20,9 @@ def bfs(mapa):
     queue = [(0,0)]
     while queue:
         v = queue.pop(0)
+        if v == (len(mapa)-1, len(mapa)-1):
+            break
+        
         for move in moves(mapa, v[0], v[1]):
             if move not in vis:
                 dist[move] = dist[v]
