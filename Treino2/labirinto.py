@@ -25,7 +25,7 @@ def bfs(mapa):
         
         for move in moves(mapa, v[0], v[1]):
             if move not in vis:
-                dist[move] = dist[v]
+                dist[move] = dist[v] + 1
                 vis.add(move)
                 pai[move] = v
                 queue.append(move)
