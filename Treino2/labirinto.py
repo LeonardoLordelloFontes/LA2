@@ -16,7 +16,6 @@ def moves(mapa, x, y):
 def bfs(mapa):
     pai = {}
     dist = {(0,0): 0}
-    vis = {(0,0)}
     queue = [(0,0)]
     while queue:
         v = queue.pop(0)
@@ -24,9 +23,8 @@ def bfs(mapa):
             break
         
         for move in moves(mapa, v[0], v[1]):
-            if move not in vis:
+            if move not in pai:
                 dist[move] = dist[v] + 1
-                vis.add(move)
                 pai[move] = v
                 queue.append(move)
             
