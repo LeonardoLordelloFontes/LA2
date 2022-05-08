@@ -22,9 +22,9 @@ def saque(mapa):
         for j in range(len(mapa[0])):
             if mapa[i][j] != '#':
                 maior = [0, 0]
-                if i > 0 and mapa[i-1][j] != '#':
+                if i > 0:
                     maior[0] = pesos[i-1][j]
-                if j > 0 and mapa[i][j-1] != '#':
+                if j > 0:
                     maior[1] = pesos[i][j-1]
                 if mapa[i][j] == '.':
                     pesos[i][j] = max(maior)
